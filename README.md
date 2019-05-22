@@ -7,7 +7,7 @@ Api is in Python and Front end is in AngularJs
 
 ---
 
-## ERequrements python and angular4
+## Requrements python 3, django rest and angular4
 
 please install all requred documents from requirement.text file 
 
