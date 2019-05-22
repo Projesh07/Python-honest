@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="center section-heading">
+        <div class="title-cat">
+            Our Campaigns
+        </div>
+        <div class="break-line">
+                <!--create by ahatnum-->
+                <div class="line">
+                </div>
+                <div class="break">
+                    <div class="break-tile left">
+                    </div>
+                    <div class="break-tile right">
+                    </div>
+                </div>
+            </div>
+        <div class="title-details">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean comm</div>
+    </div>
+    <div class="row category">
+        <ngx-slick-carousel  #slickModal="slick-carousel" [config]="slideConfig"  (afterChange)="afterChange($event)">
+            <app-campaign-item  ngxSlickItem class="slide" *ngFor="let campaign of highlightedCampaigns"
+                    campaignFeaturedImgSrc="{{ photobaseUrl }}/{{ campaign.featured_image }}"
+                    campaignTitle="{{ campaign.title }}"
+                    campaignProgress="{{ campaign.progress }}"
+                    campaignRaisedAmount="{{ campaign.total_donate }}"
+                    campaignGoalAmount="{{ campaign.amount }}"
+                    campaignShortDesc="{{ campaign.story }}"
+                    campaignSlug="{{ campaign.slug }}"
+                    slick="true"
+            ></app-campaign-item>
+        </ngx-slick-carousel>
+    </div>
+    <div class="row">
+            <div class="col s12 campaign-arrow" style="text-align: right">
+                <a class="waves-effect prev-campaign slick-arrow" href="javascript:;" (click)="slickPrev()" style="color: var(--theme-color)">
+                        <i class="fa fa-angle-left">
+                        </i>
+                    </a>
+                <a class="waves-effect next-campaign slick-arrow" href="javascript:;" (click)="slickNext()" style="color: var(--theme-color)">
+                        <i class="fa fa-angle-right">
+                        </i>
+                    </a>
+            </div>
+    </div>
+    <div class="row">
+            <div class="col s12 campaign-view-all">
+                <a class="btn waves-effect waves-light" href="javascript:;">
+                        View All
+                    </a>
+            </div>
+    </div>
+</div>

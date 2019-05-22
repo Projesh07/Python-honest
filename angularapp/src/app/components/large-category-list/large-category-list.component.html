@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="center section-heading">
+        <div class="title-cat">
+            Categories
+        </div>
+        <div class="break-line">
+                <!--create by ahatnum-->
+                <div class="line">
+                </div>
+                <div class="break">
+                    <div class="break-tile left">
+                    </div>
+                    <div class="break-tile right">
+                    </div>
+                </div>
+            </div>
+        <div class="title-details">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean comm</div>
+    </div>
+    <div class="row category">
+        <app-large-category-item *ngFor="let category of categories" categoryId="{{ category.id }}" categoryName="{{ category.name }}" categoryImgSrc="{{ photobaseUrl }}{{ category.image_url }}" categoryShortDesc="{{ category.descriptions }}"></app-large-category-item>
+    </div>
+</div>

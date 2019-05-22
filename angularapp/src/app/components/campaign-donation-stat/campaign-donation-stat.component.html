@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content" style="padding: 24px 0;">
+                <span class="camp-details-title" style="padding-left: 24px;">Donation stats</span>
+                <div class="row camp-stats ">
+                    <div class="col l6 stat-item">
+                        <div class="text">Target Donation</div>
+                        <div class="data">${{ campaignStat?.target_fund }}</div>
+                    </div>
+                    <div class="col l6 stat-item">
+                        <div class="text">Raised</div>
+                        <div class="data">${{ campaignStat?.raised_fund }}</div>
+                    </div>
+                    <div class="col l6 stat-item">
+                        <div class="text">Monthly Donor</div>
+                        <div class="data">{{ campaignStat?.monthly_donor }}</div>
+                    </div>
+                    <div class="col l6 stat-item">
+                        <div class="text">Total Donor</div>
+                        <div class="data">{{ campaignStat?.total_donor }}</div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="col s12">
+                        <button style="margin: 0 auto;display: block;margin-top: 25px;" data-target="modal_donate_now"
+                                class="waves-effect waves-light btn modal-trigger">Donate Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

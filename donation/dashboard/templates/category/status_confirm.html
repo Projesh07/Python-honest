@@ -1,0 +1,74 @@
+ {% extends "layout/main.html" %}
+
+
+
+{% block content %}
+
+
+
+ <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            {{title}}
+                        </h1>
+                        
+                        <ol class="breadcrum  breadcrumb-arrow">
+                            <li>
+                                <a href="{% url 'dashboard' %}">
+                                   <strong>
+                                       
+                                   <i class="c-white-500 ti-home"></i>
+                                   </strong> 
+                                </a>
+                            </li>
+                            <li><a href="{% url 'list_category' %}">Category</a></li>
+                            <li class="active"><span>Confirm</span></li>
+                        </ol>
+                    </div>
+                    </div>
+       
+
+                  <div class="row">
+                    <div class="col-lg-12">
+
+                    {% if not same_user %}
+                  
+                        <p>Are you sure you want to 
+                        {% if user_status.status %} 
+                          
+                          Unblock 
+                        
+                        {% else %}
+                        
+                        Block  
+
+                        {% endif %}
+
+                        this User
+                        ?</p>
+                       <form action="" method="post" novalidate>{% csrf_token %}
+                          
+                          <input type="submit" class='btn btn-info' value="Confirm" />
+                          <a href="{{ view.get_success_url }}" class="btn btn-default">Cancel</a>
+                      </form>
+                  {% else %}
+
+                    <p style="color: red;font-weight: bold"> You can not block your self </p>
+                  {% endif %}
+                </div>
+            </div>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        </div>
+
+
+{% endblock content %}
+
+

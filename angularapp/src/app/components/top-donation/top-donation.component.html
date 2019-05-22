@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card">
+            <div class="card-content">
+                <span class="camp-details-title">Top Donations</span>
+                <div class="row donation-details" style="margin-bottom: 0;">
+                    <div class="col l12" *ngFor="let donation of donations">
+                        <div class="row">
+                            <div class="col s4 img">
+                                <img src="{{donation?.user.profile.image_url  }}" *ngIf="donation?.user.profile.image_url">
+                                <img src="assets/img/profile.png" *ngIf="!donation?.user.profile.image_url">
+                            </div>
+                            <div class="col s8 user-details">
+                                <div class="name" >{{ donation?.user.first_name }} {{ donation?.user.last_name }}</div>
+                                <div class="date">{{ donation?.donate_at|date:'mediumDate'}}</div>
+                                <div class="amount">$ {{ donation?.amount}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

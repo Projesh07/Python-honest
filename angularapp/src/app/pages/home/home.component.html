@@ -1,0 +1,370 @@
+<app-slider-home></app-slider-home>
+<app-large-category-list></app-large-category-list>
+<div class="call-section little-section donate-now">
+    <div class="container">
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="call-text">
+                    CALL US +(00) 123 456 789 OR EMAIL
+                    <br/>
+                    INFO@YOURMAIL.COM
+                </div>
+                <div class="white-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                </div>
+                <div class="start">
+                    <a class="waves-effect waves-light btn">
+                            Donate Now
+                    </a>
+                </div>
+            </div>
+    </div>
+</div>
+<app-highlighted-campaign-list></app-highlighted-campaign-list>
+<div class="client-section little-section what-people-say">
+    <div class="container">
+            <div class="center section-heading">
+                <div class="title-cat" style="padding-top: 10px;">
+                    What people Say
+                </div>
+                <div class="break-line-what-people">
+                    <!--create by ahatnum-->
+                    <div class="line">
+                    </div>
+                    <div class="break">
+                        <div class="break-tile left">
+                        </div>
+                        <div class="break-tile right">
+                        </div>
+                    </div>
+                </div>
+                <div class="title-details">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean comm
+                </div>
+            </div>
+            <div class="row responsive-people">
+                <ngx-slick-carousel  #slickModal="slick-carousel" [config]="slideConfig"  (afterChange)="afterChange($event)">
+                    <div ngxSlickItem class="slide col s12 m4 item">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col l3">
+                                        <div class="profile-img">
+                                            <img src="assets/img/testi1.png" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col l9 client-intro">
+                                        <div class="name">
+                                            Sheikh Hasina
+                                        </div>
+                                        <div class="title">
+                                            Prime Minister
+                                        </div>
+                                    </div>
+                                    <div class="col m12 description">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide col s12 m4 item">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col l3">
+                                        <div class="profile-img">
+                                            <img src="assets/img/testi2.png" />
+                                        </div>
+                                    </div>
+                                    <div class="col l9 client-intro">
+                                        <div class="name">
+                                            John Snow
+                                        </div>
+                                        <div class="title">
+                                            King of North
+                                        </div>
+                                    </div>
+                                    <div class="col m12 description">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide col s12 m4 item">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col l3">
+                                        <div class="profile-img">
+                                            <img src="assets/img/testi3.png" />
+                                        </div>
+                                    </div>
+                                    <div class="col l9 client-intro">
+                                        <div class="name">
+                                            Michel Ben Header
+                                        </div>
+                                        <div class="title">
+                                            Manager
+                                        </div>
+                                    </div>
+                                    <div class="col m12 description">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide col s12 m4 item">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col l3">
+                                        <div class="profile-img">
+                                            <img src="assets/img/testi2.png" />
+                                        </div>
+                                    </div>
+                                    <div class="col l9 client-intro">
+                                        <div class="name">
+                                            John Snow
+                                        </div>
+                                        <div class="title">
+                                            King of North
+                                        </div>
+                                    </div>
+                                    <div class="col m12 description">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+            <div class="row">
+                <div class="col s12 people-arrow" style="text-align: right">
+                    <a class="waves-effect prev-people slick-arrow" (click)="slickPrev()" href="javascript:;" style="color: var(--header-main)">
+                            <i class="fa fa-angle-left">
+                            </i>
+                        </a>
+                    <a class="waves-effect next-people slick-arrow" (click)="slickNext()" href="javascript:;" style="color: var(--header-main)">
+                            <i class="fa fa-angle-right">
+                            </i>
+                        </a>
+                </div>
+            </div>
+            <!--stats-->
+        </div>
+</div>
+<div class="container" style="width:75%">
+    <app-home-stat></app-home-stat>
+    <div class="center section-heading">
+        <div class="title-cat">
+            Upcoming Events
+        </div>
+        <div class="break-line">
+                <!--create by ahatnum-->
+                <div class="line">
+                </div>
+                <div class="break">
+                    <div class="break-tile left">
+                    </div>
+                    <div class="break-tile right">
+                    </div>
+                </div>
+        </div>
+        <div class="title-details">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean comm</div>
+    </div>
+    <div class="row category">
+
+            <div class="col s12 m6 upcoming">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row" style="margin-bottom: 0px">
+                            <div class="col s4 upcoming-event">
+                                <img src="assets/img/event/event1.png" />
+
+                            </div>
+                            <div class="col s8 upcoming-event">
+                                <div class="upcoming-headline" title="Celebrating Winter Holidays">
+                                    Celebrating Winter Holidays
+                                </div>
+                                <div class="upcoming-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedr xdeiumod tempor incididunt ut labore et.
+                                </div>
+                                <div class="camp-stat-info">
+                                    <div>
+                                        <i class="material-icons">
+                                                access_time
+                                            </i>
+                                        <span>
+                                                15 Jul 2017
+                                            </span>
+                                    </div>
+                                    <div>
+                                        <i class="material-icons">
+                                                location_on
+                                            </i>
+                                        <span>
+                                                Dhaka, Bangladesh
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 upcoming">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row" style="margin-bottom: 0px">
+                            <div class="col s4 upcoming-event">
+                                <img src="assets/img/event/event2.png" />
+
+                            </div>
+                            <div class="col s8 upcoming-event">
+                                <div class="upcoming-headline" title="Halloween Festival">
+                                    Halloween Festival
+                                </div>
+                                <div class="upcoming-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedr xdeiumod tempor incididunt ut labore et.
+                                </div>
+                                <div class="camp-stat-info">
+                                    <div>
+                                        <i class="material-icons">
+                                                access_time
+                                            </i>
+                                        <span>
+                                                20 Aug 2017
+                                            </span>
+                                    </div>
+                                    <div>
+                                        <i class="material-icons">
+                                                location_on
+                                            </i>
+                                        <span>
+                                                Sylhet, Bangladesh
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 upcoming">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row" style="margin-bottom: 0px">
+                            <div class="col s4 upcoming-event">
+                                <img src="assets/img/event/event3.png" />
+                            </div>
+                            <div class="col s8 upcoming-event">
+                                <div class="upcoming-headline" title="July Food Festival">
+                                    July Food Festival
+                                </div>
+                                <div class="upcoming-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedr xdeiumod tempor incididunt ut labore et.
+                                </div>
+                                <div class="camp-stat-info">
+                                    <div>
+                                        <i class="material-icons">
+                                                access_time
+                                            </i>
+                                        <span>
+                                                13 Oct 2017
+                                            </span>
+                                    </div>
+                                    <div>
+                                        <i class="material-icons">
+                                                location_on
+                                            </i>
+                                        <span>
+                                                Chittgong, Bangladesh
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 upcoming">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row" style="margin-bottom: 0px">
+                            <div class="col s4 upcoming-event">
+                                <img src="assets/img/event/event4.png" />
+                            </div>
+                            <div class="col s8 upcoming-event">
+                                <div class="upcoming-headline" title="Kombol Concert">
+                                    Kombol Concert
+                                </div>
+                                <div class="upcoming-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedr xdeiumod tempor incididunt ut labore et.
+                                </div>
+                                <div class="camp-stat-info">
+                                    <div>
+                                        <i class="material-icons">
+                                                access_time
+                                            </i>
+                                        <span>
+                                                25 Dec 2017
+                                            </span>
+                                    </div>
+                                    <div>
+                                        <i class="material-icons">
+                                                location_on
+                                            </i>
+                                        <span>
+                                                Munshiganj, Bangladesh
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+<div class="call-section little-section newsletter">
+        <div class="container">
+            <div class="row" style="margin-bottom: 0;">
+                <div class="col m5 s12" style="color: white;padding: 5px 0;overflow: hidden;">
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s2">
+                            <i class="fa fa-envelope-o" style="font-size:40px;">
+                                </i>
+                        </div>
+                        <div class="col s10" style="text-align: left;">
+                            <b style="font-size: 16px;">
+                                    NewsLetter Subscribe
+                                </b>
+                            <br/>
+                            <span style="font-size: 11px;color: #d7f3e5;">
+                                        Lorem Ipsum musim saram kejao askdin smaalo aslowmol.
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m7 s12" style="padding: 5px 0;">
+                    <div class="col m4 s12">
+                        <input id="name" placeholder="Name" type="text" />
+                    </div>
+                    <div class="col m4 s12">
+                        <input id="email" placeholder="Email" type="email" />
+                    </div>
+                    <div class="col m3 s12">
+                        <button class="waves-effect btnNewsletter">
+                            Sign up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,74 @@
+<nav class="top-header" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col m8 s7">
+                <div class="row">
+                    <div class="col m5 s12 phone">
+                        <i class="fa fa-phone">
+                        </i>
+                            <span>
+                                    +8801234578191
+                                </span>
+                    </div>
+                    <div class="col m7 s12 email">
+                        <i class="fa fa-envelope">
+                        </i>
+                            <span>
+                                    support@techlogicians.com
+                                </span>
+                    </div>
+                </div>
+            </div>
+            <div class="right col m4 s5 social-icon">
+                <a class="social-icon-item fac" href="javascript:;">
+                    <i class="fa fa-facebook">
+                    </i>
+                </a>
+                <a class="social-icon-item twi" href="javascript:;">
+                    <i class="fa fa-twitter">
+                    </i>
+                </a>
+                <a class="social-icon-item pin" href="javascript:;">
+                    <i class="fa fa-pinterest">
+                    </i>
+                </a>
+                <a class="social-icon-item dri" href="javascript:;">
+                    <i class="fa fa-dribbble">
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="navbar-fixed" id="menubar">
+    <nav class="navbar" id="menu">
+        <div class="container">
+            <div class="row">
+                <a href="index.html" class="brand-logo center"><img
+                        src="assets/img/bng-img/logo.png"><span>Donation</span></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/campaigns">Campaigns</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li *ngIf="isLoggedIn$|async as logged; else notloggedin">
+                        <a routerLink="/user-panel/dashboard">Profile</a>
+                    </li>
+                    <ng-template #notloggedin>
+                        <li><a routerLink="/login">Login/Register</a></li>
+                    </ng-template>
+                </ul>
+
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/campaigns">Campaigns</a></li>
+                    <li><a href="index.html">Login/Register</a></li>
+                    <!--<li><a href="index.html">Components</a></li>-->
+                    <li><a href="index.html">Contacts</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</div>

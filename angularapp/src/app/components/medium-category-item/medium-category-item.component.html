@@ -1,0 +1,6 @@
+<div class="col l4">
+    <div class="chip small-category-click" [ngStyle]="{'background':selected?'#42B77A':none}" routerLink="/campaigns/{{ categoryId }}">
+        <img src="{{ categoryImgSrc }}" alt="{{ categoryName }}">
+        <span [ngStyle]="{'color':selected?'#fff':none}"> {{ categoryName }}</span>
+    </div>
+</div>

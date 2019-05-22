@@ -1,0 +1,184 @@
+<div class="banner">
+    <div class="redy">
+        <div class="header-info">
+            <div class="header-title">
+                REGISTRATION
+            </div>
+
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a routerLink="#!" class="breadcrumb">Home</a>
+                        <a routerLink="#!" class="active">Registration</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container" style="width: 75%">
+    <div class="row">
+        <div class="col l6 offset-l3 m8 offset-m2 s12">
+            <div class="card">
+
+                <div class="card-content">
+                    <div class="login">
+
+                        <div class="row">
+                            <span style="font-size: 23px;">CREATE AN ACCOUNT</span>
+                            <form class="col s12" style="margin-bottom: 0;" (ngSubmit)="f.form.valid && register()"
+                                  #f="ngForm" novalidate>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="first_name" placeholder="First name" type="text" class="validate"
+                                               required [(ngModel)]="model.first_name" #first_name="ngModel"
+                                               name="first_name">
+                                        <!-- <label for="first_name">First Name</label> -->
+
+                                        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+                                             class="alert alert-danger">
+
+                                            <div *ngIf="first_name.errors.required">
+                                                First Name is required.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="last_name" required type="text" placeholder="Last name" class="validate"
+                                               [(ngModel)]="model.last_name" #last_name="ngModel" name="last_name">
+                                        <!-- <label for="last_name">Last Name</label> -->
+                                        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)"
+                                             class="alert alert-danger">
+
+                                            <div *ngIf="last_name.errors.required">
+                                                Last Name is required.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input id="email" type="email" placeholder="Email" class="validate" required
+                                               [(ngModel)]="model.email" #email="ngModel" name="email">
+                                        <!-- <label for="email">Email</label> -->
+
+                                        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                             class="alert alert-danger">
+
+                                            <div *ngIf="email.errors.required">
+                                                Email is required.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="input-field col s12">
+                                        <input id="username" type="text" placeholder="Username" class="validate"
+                                               required [(ngModel)]="model.username" #username="ngModel"
+                                               name="username">
+                                        <!-- <label for="username">Username</label> -->
+
+                                        <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                             class="alert alert-danger">
+
+                                            <div *ngIf="username.errors.required">
+                                                Username is required.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input id="password1" placeholder="Password" type="password" class="validate"
+                                               required [(ngModel)]="model.password1" #password1="ngModel"
+                                               name="password1">
+                                        <!-- <label for="password1">Password</label> -->
+
+                                        <div *ngIf="password1.invalid && (password1.dirty || password1.touched)"
+                                             class="alert alert-danger">
+
+                                            <div *ngIf="password1.errors.required">
+                                                Password is required.
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input id="password2" placeholder="Confirm Password" type="password"
+                                               class="validate" required [(ngModel)]="model.password2"
+                                               #password2="ngModel" name="password2">
+                                        <!-- <label for="password2">Confirm Password</label> -->
+
+                                        <div *ngIf="password2.invalid && (password2.dirty || password2.touched)"
+                                             class="alert alert-danger">
+
+                                            <div *ngIf="password2.errors.required">
+                                                Password is required.
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- <div *ngIf="password2.valid && password1 != password2"
+                                            class="alert alert-danger">
+
+                                            <div *ngIf="password2.errors.required">
+                                                  Password didn't match.
+                                            </div>
+
+                                        </div> -->
+
+                                    </div>
+                                    <!-- <div class="input-field col s12">
+                                        <input id="comfirm_password" type="text" class="validate">
+                                        <label for="comfirm_password">Comfirm Password</label>
+                                    </div> -->
+                                    <div class="input-field col s12 left">
+                                        <input type="checkbox" id="subscribe" name="subscribe"/>
+                                        <!-- <label for="subscribe">
+                                                <span>Subscribe for our awesome newsletter</span>
+                                         </label> -->
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <button [disabled]="!f.form.valid"
+                                                class="btn waves-effect waves-light signup-button" type="submit"
+                                                name="action">Sign Up
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row social-row ">
+                                    <div class="input-field col s6">
+                                        <button class="btn waves-effect waves-light fb-social-button"
+                                                (click)="socialSignIn('facebook')" name="action">Facebook
+                                            <i class="fab fa-facebook-f left"></i>
+                                        </button>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <button class="btn waves-effect waves-light gplus-social-button"
+                                                (click)="socialSignIn('google')" name="action">Google
+                                            <i class="fab fa-google-plus-g left"></i>
+                                        </button>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <span> Already have an account? <a routerLink="/login"
+                                                                           class="link">Login</a></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

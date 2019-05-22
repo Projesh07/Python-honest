@@ -1,0 +1,10 @@
+.small-category a{
+  cursor: pointer;
+}
+.small-category a:hover{
+  color: darkgray;
+}
+
+.small-category:focus{
+  outline: none;
+}

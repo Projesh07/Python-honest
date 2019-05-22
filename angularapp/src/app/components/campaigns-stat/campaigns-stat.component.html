@@ -1,0 +1,26 @@
+<div class="col s12 m4 l4 campaign-category-m-break">
+    <div class="campaign-extra-height-68"></div>
+    <div class="card">
+        <div class="card-content" style="padding: 24px 0;">
+            <span class="camp-details-title" style="padding-left: 24px;">Donation Statistics</span>
+            <div class="row camp-stats">
+                <div class="col s6 stat-item">
+                    <div class="text">Target Fund</div>
+                    <div class="data">${{ stat?.target_fund }}</div>
+                </div>
+                <div class="col s6 stat-item">
+                    <div class="text">Total Raised</div>
+                    <div class="data"> ${{ stat?.raised_fund }}</div>
+                </div>
+                <div class="col s6 stat-item">
+                    <div class="text">Total Campaign</div>
+                    <div class="data">{{ stat?.total_campaign }}</div>
+                </div>
+                <div class="col s6 stat-item">
+                    <div class="text">Total Donor</div>
+                    <div class="data">{{ stat?.total_donor }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

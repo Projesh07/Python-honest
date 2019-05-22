@@ -1,0 +1,131 @@
+ {% extends "layout/main.html" %}
+ {% load table_tags %}
+
+
+ {% block content %}
+ 
+ {% block style %}
+    <style type="text/css">
+        .campaign-title {
+            text-align: right;
+            background-color: none;
+            margin-top: 10px;
+            border-top: 10px;
+            border-bottom: 10px;
+            text-transform: uppercase;
+            color: #782a8f;
+        }
+    </style>
+ {% endblock style %}
+
+
+
+
+
+ <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="javascript:history.go(-1)">
+                    <button class="btn btn-success" style="float: right;margin-top: 10px;">
+                        Back
+                    </button>
+                </a>
+                <h1 class="page-header">
+                    {{ title }}
+                </h1>
+                <ol class="breadcrum  breadcrumb-arrow">
+                    <li>
+                        <a href="{% url 'dashboard' %}">
+                            <strong>
+
+                                <i class="c-white-500 ti-home"></i>
+                            </strong> 
+                        </a>
+                    </li>
+                    {% for key,id,name in breadcrumb %}
+                        {% if id != "" %}
+                            <li><a href="{% url key id %}">{{ name }}</a></li>                        
+                        {% else %}
+                            <li><a href="{% url key %}">{{ name }}</a></li>                        
+                        {% endif %}
+
+                    {% endfor %}
+                    <li class="active"><span>Payment</span></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-lg-12" style="">
+
+           <div class="campaign-title">
+                <span>
+                    <h1>{{name}}</h1>
+                </span>
+            </div>
+
+           <div class="">
+               <!--  <div class="col-lg-4" style="border-right: 10px solid white;">
+
+                     <div class="panel panel-default" style="border-bottom: 10px solid white;background-color: none; margin-top: 50%;"><label>Number of donation:</label> <span> &nbsp {{total_donate_number}}</span>
+                     </div>
+                     <div class="panel panel-default" style="background-color: none; margin-top: 0%;">
+                    <label>Total donation:</label> <span>&nbsp  {{total_donate}}</span>
+                    </div>
+              
+                      
+                </div> -->
+                <div class="row mB-20">
+                    <div class="col-md-6">
+                        <div class="layers bd bgc-white p-20">
+                            <div class="layer w-100 mB-10">
+                                <h6 class="lh-1">Number of Donations</h6>
+                            </div>
+                            <div class="layer w-100">
+                                <div class="peers ai-sb fxw-nw">
+                                    <div class="peer peer-greed">
+                                        <span id="sparklinedash2">
+                                            <canvas width="45" height="20" style="display: inline-block; width: 45px; height: 20px; vertical-align: top;"></canvas>
+                                        </span>
+                                    </div>
+                                    <div class="peer">
+                                        <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">{{total_donate_number}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="layers bd bgc-white p-20">
+                            <div class="layer w-100 mB-10">
+                                <h6 class="lh-1">Total Donations</h6>
+                            </div>
+                            <div class="layer w-100">
+                                <div class="peers ai-sb fxw-nw">
+                                    <div class="peer peer-greed">
+                                        <span id="sparklinedash3">
+                                            <canvas width="45" height="20" style="display: inline-block; width: 45px; height: 20px; vertical-align: top;"></canvas>
+                                        </span>
+                                    </div>
+                                    <div class="peer"><span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">~ {{total_donate}} Tk</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+
+                    {% render_table payment_table %}
+
+                </div>
+            </div>
+          </div>
+
+      </div>
+  </div>
+
+
+  {% endblock content %}
+
+

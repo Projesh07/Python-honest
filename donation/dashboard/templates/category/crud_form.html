@@ -1,0 +1,207 @@
+{% extends "layout/main.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+ <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            {{title}}
+                        </h1>
+                        
+                        <ol class="breadcrum  breadcrumb-arrow">
+                            <li>
+                                <a href="{% url 'dashboard' %}">
+                                   <strong>
+                                       
+                                   <i class="c-white-500 ti-home"></i>
+                                   </strong> 
+                                </a>
+                            </li>
+                            <li><a href="{% url 'list_category' %}">Category</a></li>
+                            <li class="active"><span>{{breadcrumb}}</span></li>
+                        </ol>
+
+                    </div>
+                </div>
+
+        
+        <br>
+
+                  <div class="row">
+                    <div class="col-lg-12">
+                   <form action="" method="post" enctype="multipart/form-data" novalidate>{% csrf_token %}
+            
+                    <!-- <div class="masonry-item">
+                        <div class="bgc-white p-20 bd  col-md-6">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ form.name.errors }}
+                                    {{ form.name.label_tag }}
+                                    {{ form.name }}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    {{ form.descriptions.errors }}
+                                    {{ form.descriptions.label_tag }}
+                                    {{ form.descriptions }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bgc-white p-20 bd  col-md-6">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input type="file" name="image" class="form-control dropify">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="file" name="cover_image" class="form-control dropify">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="masonry-item">
+                        <div class="bgc-white p-20 bd  col-md-12">
+                           <!-- <h6 class="c-grey-900">Add User</h6> -->
+                           <div class="mT-30">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        {{ form.name.errors }}
+                                        {{ form.name.label_tag }}
+                                        {{ form.name }}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        {{ form.tagline.errors }}
+                                        {{ form.tagline.label_tag }}
+                                        {{ form.tagline }}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12" style="float: left;">
+                                    
+                                        
+                                        <div class="form-group">
+                                            {{ form.descriptions.errors }}
+                                            {{ form.descriptions.label_tag }}
+                                            {{ form.descriptions }}
+                                        </div>
+                                    
+                                </div>
+                                <div class="form-group col-md-4"  style="float: left;">
+                                    <div class="form-group">
+                                        <label >Image</label>
+                                        <input type="file" data-file-id="{{ category.id }}" name="image" id="imgUploader" class="imgUploader" data-default-file="{{ category.image_url | default_if_none:''  }}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-8"  style="float: left;">
+                                    
+                                    
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                      <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Cover Image</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cover Video</a>
+                                      </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <input type="file" data-file-id="{{ category.id }}" name="cover_image" id="coverUploader" class="imgUploader" data-default-file="{{ category.cover_photo_url | default_if_none:'' }}" />
+                                        </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="form-group">
+                                                <label></label>
+                                                <input type="text" name="cover_video" id="coverUploader" class="form-control" value="{{ category.cover_video | default_if_none:'' }}" />  
+                                            </div>
+                                        </div>
+                                    
+
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <a href="{{ view.get_success_url }}" class="btn btn-default">
+                                        <button type="button" class="btn cur-p btn-secondary">Cancel</button>
+                                    </a>
+                                </div>
+                           </div>
+                        </div>
+                     </div>
+                      <!-- {% for field in form.visible_fields %}
+
+                        <div class="fieldWrapper">
+                            {{ field.errors }}
+
+                            {% if field.id_for_label == "id_image" or field.id_for_label == "id_cover_image"  %}
+                            {{ field.label_tag }}
+
+                            {% if field.value %}
+                            <img style="width:100px; height:100px;" src="/../media_cdn/{{ field.value }}">
+
+                            {% endif %}
+
+                            {{ field }}
+                            {% else %}
+                            {{ field.label_tag }}{{ field }}
+                            {% endif %}
+                            
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %} -->
+                      <!-- <input type="submit" class='btn btn-default' value="Save" />
+                       <a href="{{ view.get_success_url }}" class="btn btn-default">Cancel</a> -->
+                  </form>
+                </div>
+            </div>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        </div>
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        // remove category images
+        $(".imgUploader").dropify();
+
+        $(".dropify-clear").on("click",function(e){
+
+            // if ((r = confirm('sure remove?') ) == true ) {
+
+                e.preventDefault();
+
+                var token = $("[name='csrfmiddlewaretoken']").val()
+                var response = ajax_category_image_delete(this,token);
+              
+              
+            // }
+        });
+
+    });
+
+</script>
+{% endblock script %}
+
+
+
+

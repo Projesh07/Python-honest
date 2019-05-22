@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card">
+            <div class="card-content">
+                <span class="camp-details-title">Campaign Categories</span>
+                <div class="row camp-categories" style="margin-bottom: 0;">
+                    <app-small-category-item *ngFor="let category of categories" categoryId="{{ category.id }}" categoryName="{{ category.name }}" categoryImgSrc="{{ photobaseUrl }}{{category.image_url}}"></app-small-category-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

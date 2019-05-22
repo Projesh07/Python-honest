@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card">
+            <div class="card-content other-campaign">
+                <span class="camp-details-title">Other Campaigns</span>
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="col l12" *ngFor="let campaign of campaigns">
+                        <div class="row">
+                            <div class="col s4 img">
+                                <img src="{{ photobaseUrl }}/{{ campaign?.featured_image }}">
+                            </div>
+                            <div class="col s8 campaign-info">
+                                <div class="title" >{{ campaign?.title }}</div>
+                                <!--<div class="date">4 feb 2017</div>-->
+                                <div class="days-left">{{ campaign?.end_date| amParse:'YYYY-MM-DD'|amDifference: today :'days' : true| number:'1.0-0' }} days left</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

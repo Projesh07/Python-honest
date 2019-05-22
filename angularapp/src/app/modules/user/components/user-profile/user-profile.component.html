@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="title-cat" style="margin-left: 15px">
+                Profile
+    </div>
+    <div class="row" *ngIf="!edit">
+            <div class="col s12 m6">
+                <div class="col s12 m6" *ngIf="user?.username">
+                    Username
+                </div>
+                <div class="col s12 m6" *ngIf="user?.username">
+                   {{ user?.username }}
+                </div>
+                <div class="col s12 m6">
+                    First Name
+                </div>
+                <div class="col s12 m6">
+                   {{ user?.first_name }}
+                </div>
+                <div class="col s12 m6">
+                    Last Name
+                </div>
+                <div class="col s12 m6">
+                    {{ user?.last_name }}
+                </div>
+                <div class="col s12 m6">
+                    Email
+                </div>
+                <div class="col s12 m6">
+                    {{ user?.email }}
+                </div>
+                 <div class="col s12 m6">
+                    Date Joined
+                </div>
+                <div class="col s12 m6">
+                    {{ user?.date_joined|date:'fullDate' }}
+                </div>
+                <br>
+                <button class="btn waves-effect waves-light" style="margin-top: 20px;margin-left: 10px;" (click)="enableEdit()">Edit</button>
+            </div>
+
+    </div>
+    <div class="row" *ngIf="edit">
+        <form class="col s12 m6" #f="ngForm" (ngSubmit)="updateInfo(f)">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" name="firstName" type="text" ngModel [(ngModel)]="firstname" required #firstName="ngModel" class="validate" [value]="">
+              <label class="active" for="first_name">First Name</label>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s6">
+              <input id="last_name" name="lastName" type="text" ngModel required #lastName="ngModel" [(ngModel)]="lastname"  class="validate">
+              <label class="active" for="last_name">Last Name</label>
+            </div>
+          </div>
+            <button class="btn waves-effect waves-light" style="margin-top: 20px;margin-left: 10px;" type="submit" name="action">Save</button>
+            <button class="btn waves-effect waves-light red lighten-2" style="margin-top: 20px;margin-left: 10px;" (click)="disableEdit()">Cancel</button>
+        </form>
+    </div>
+</div>

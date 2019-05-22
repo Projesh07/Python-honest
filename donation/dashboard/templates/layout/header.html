@@ -1,0 +1,138 @@
+{% load staticfiles %}
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Donation Admin Dashboard</title>
+
+    <style>
+         #loader {
+            transition: all .3s ease-in-out;
+            opacity: 1;
+            visibility: visible;
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            background: #fff;
+            z-index: 90000
+         }
+
+         #loader.fadeOut {
+            opacity: 0;
+            visibility: hidden
+         }
+
+         .spinner {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+            background-color: #333;
+            border-radius: 100%;
+            -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+            animation: sk-scaleout 1s infinite ease-in-out
+         }
+
+         @-webkit-keyframes sk-scaleout {
+            0% {
+               -webkit-transform: scale(0)
+            }
+            100% {
+               -webkit-transform: scale(1);
+               opacity: 0
+            }
+         }
+
+         @keyframes sk-scaleout {
+            0% {
+               -webkit-transform: scale(0);
+               transform: scale(0)
+            }
+            100% {
+               -webkit-transform: scale(1);
+               transform: scale(1);
+               opacity: 0
+            }
+         }
+      </style>
+
+  <script src="{% static 'dashboard/js/jquery.js' %}"></script>
+  <script src="{% static 'dashboard/js/site.js' %}"></script>
+  <link href="{% static 'dashboard/css/site.css' %}" rel="stylesheet">
+  <script src="{% static 'dashboard/js/jquery_step.js' %}"></script>
+     <!-- <script src="{% static 'dashboard/js/tagit.js' %}"></script> -->
+   
+   <!-- <link href="{% static 'dashboard/css/bootstrap.min.css' %}" rel="stylesheet"> -->
+   <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
+
+   
+    <link href="{% static 'theme/animator/style.css' %}" rel="stylesheet">
+    <link href="{% static 'theme/animator/ti-icons.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'dashboard/css/tagit.css' %}" rel="stylesheet"> -->
+
+    <link href="{% static 'dashboard/css/dropify.css' %}" rel="stylesheet">
+    <script src="{% static 'dashboard/js/dropify.js' %}"></script>
+
+    <link href="{% static 'dashboard/css/datepicker.css' %}" rel="stylesheet" /> 
+    <script src="{% static 'dashboard/js/bootstrap-datepicker.js' %}"></script> 
+    <script src="{% static 'dashboard/js/jquery_validate.js' %}"></script> 
+    <script src="{% static 'dashboard/js/dropzone.js' %}"></script> 
+    <link href="{% static 'dashboard/css/dropzone.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'dashboard/css/fluid-gallery.css' %}">    
+    <!-- <link rel="stylesheet" href="{% static 'dashboard/css/gallery-grid.css' %}">     -->
+    
+    <script type="text/javascript">
+
+        var BASE_URL = "http://{{ request.get_host }}/";
+
+        $(function(){
+            
+            //date range picker 
+            var nowTemp = new Date();
+            var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+             
+            var checkin = $('#id_start_date').datepicker({
+              onRender: function(date) {
+                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+              }
+            }).on('changeDate', function(ev) {
+              if (ev.date.valueOf() > checkout.date.valueOf()) {
+                var newDate = new Date(ev.date)
+                newDate.setDate(newDate.getDate() + 1);
+                checkout.setValue(newDate);
+              }
+              checkin.hide();
+              $('#id_end_date')[0].focus();
+            }).data('datepicker');
+            var checkout = $('#id_end_date').datepicker({
+              onRender: function(date) {
+                return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+              }
+            }).on('changeDate', function(ev) {
+              checkout.hide();
+            }).data('datepicker');
+              
+            // making perfect position.. 
+            $('#id_start_date').on('focus',function(){
+                var top = $(this).outerHeight(true) + $(this).offset().top
+                $(".datepicker").css({ 'top' : top})
+            });
+            $('#id_end_date').on('focus',function(){
+                var top = $(this).outerHeight(true) + $(this).offset().top
+                $(".datepicker").css({ 'top' : top})
+            });
+        });
+
+
+        $('.dropify').dropify();
+
+
+    </script>
+
+
+</head>

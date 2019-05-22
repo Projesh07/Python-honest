@@ -1,0 +1,56 @@
+ {% extends "layout/main.html" %}
+
+
+
+{% block content %}
+
+
+
+ <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            {{title}}
+                        </h1>
+                        
+                        <ol class="breadcrum  breadcrumb-arrow">
+                            <li>
+                                <a href="{% url 'dashboard' %}">
+                                   <strong>
+                                       
+                                   <i class="c-white-500 ti-home"></i>
+                                   </strong> 
+                                </a>
+                            </li>
+                            <li><a href="{% url 'list_category' %}">Category</a></li>
+                            <li class="active"><span>Confirm</span></li>
+                        </ol>
+                    </div>
+                    </div>
+       
+
+                  <div class="row">
+                    <div class="col-lg-12">
+               
+                    <p>Are you sure you want to delete "{{ object.name }}"?</p>
+                   <form action="" method="post" novalidate>{% csrf_token %}
+                      
+                      <input type="submit" class='btn btn-danger' value="Confirm" />
+                      <a href="{{ view.get_success_url }}" class="btn btn-secondary">Cancel</a>
+                  </form>
+                </div>
+            </div>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        </div>
+
+
+{% endblock content %}
+
+

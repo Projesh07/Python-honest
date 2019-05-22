@@ -1,0 +1,107 @@
+<div class="banner">
+    <div class="redy">
+        <div class="header-info">
+            <div class="header-title">
+                LOGIN
+            </div>
+
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="#!" class="breadcrumb">Home</a>
+                        <a href="#!" class="active">Login</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container" style="width: 75%">
+    <div class="row">
+        <div class="col l6 offset-l3 m8 offset-m2 s12">
+            <div class="card">
+
+                <div class="card-content">
+                        <div class="signup">
+                            <div class="row" style="margin-bottom: 0;">
+                                <span style="font-size: 23px;">WELCOME BACK</span>
+                                <form class="col s12" style="margin-bottom: 0;" (ngSubmit)="loginFrom.form.valid && login()" #loginFrom="ngForm" novalidate>
+                                    <div class="row">
+
+                                        <div class="input-field  col s12">
+                                            <input id="username" type="text" [(ngModel)]="model.username" #username="ngModel" name="username"  class="validate" required>
+											<!-- <label for="username" class="active">Username</label> -->
+											<span  class="helper-text" data-error="wrong" data-success="right"></span>
+
+											<div *ngIf="username.invalid && (username.dirty || username.touched)"
+												class="alert alert-danger">
+
+												<div *ngIf="username.errors.required">
+													Username is required.
+												</div>
+
+											</div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <input id="password" type="password" class="validate" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+											<!-- <label for="password" class="active">Password</label> -->
+                                            <span class="helper-text" data-error="password required" data-success="right"></span>
+
+                                            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+												class="alert alert-danger">
+
+												<div *ngIf="password.errors.required">
+													Password is required.
+												</div>
+
+											</div>
+                                        </div>
+                                        <div class="input-field col s6 left">
+                                            <input type="checkbox" id="rememberme" name="rememberme" />
+                                            <label for="rememberme">
+                                                    <span>Remember me</span>
+                                             </label>
+                                        </div>
+                                        <div class="input-field col s6 left">
+                                            <a href="/forgot-password">Forgot password?</a>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <button [disabled]="!loginFrom.form.valid" class="btn waves-effect waves-light signup-button" type="submit" name="action">Login</button>
+                                        </div>
+                                    </div>
+
+
+									<div [hidden]="!submitted">
+
+									</div>
+                                </form>
+                                <div class="row social-row ">
+                                        <div class="input-field col s6">
+                                            <button class="btn waves-effect waves-light fb-social-button" (click)="socialSignIn('facebook')" name="action">Facebook
+                                                <i class="fab fa-facebook-f left"></i>
+                                            </button>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <button class="btn waves-effect waves-light gplus-social-button" (click)="socialSignIn('google')" name="action">Google
+                                                <i class="fab fa-google-plus-g left"></i>
+                                            </button>
+                                        </div>
+
+
+
+                                    </div>
+                                <div class="row">
+                                        <div class="input-field col s12">
+
+                                            <span> No user account? <a routerLink="/register"class="link">Sign Up</a></span>
+                                        </div>
+									</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

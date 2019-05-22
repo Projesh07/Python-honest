@@ -1,0 +1,29 @@
+<div class="col s12 item" [ngClass]="{'m4':slick === 'false','l4':slick === 'false'}">
+        <div class="box">
+            <img src="{{ campaignFeaturedImgSrc }}">
+            <div class="textSection">
+                <div class="_title">
+                    {{ campaignTitle }}
+                </div>
+                <p>
+                    {{ campaignShortDesc | truncate:100}}
+                </p>
+                <div class="tooltipSection">
+                    <div class="_tooltip" [ngStyle]="{'left':'calc('+campaignProgress+'% - 24px)'}">{{ campaignProgress | number:'1.0-0' }}%</div>
+                    <div class="progress">
+                        <div class="determinate" [style.width.%]="campaignProgress">
+                        </div>
+                    </div>
+                    <div class="progressBottomTxt">
+                        <div class="_left">
+                            Raised: <span>${{ campaignRaisedAmount }}</span>
+                        </div>
+                        <div class="_right">
+                            Goal: <span>${{ campaignGoalAmount }}</span>
+                        </div>
+                    </div>
+                    <button class="btnDonate waves-effect" routerLink="/{{ campaignSlug }}">Donate Now</button>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Donation</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
+    <!--Custom Css-->
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hover.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    -->
+    <style>
+        .campaign_no {
+    position: absolute;
+    right: 23px;
+    top: 10px;
+    font-size: 16px;
+    font-weight: 900 !important;
+    display: inline-block;
+    color: #65766d;
+}
+        .b-img {
+        height: 50px;
+        /*Changed by ahatnum*/
+        width: 50px!important;
+        /*Changed by ahatnum*/
+        display: block;
+        margin: 15px auto;
+    }
+
+    .details-button {
+        background-color: #5dae1f;
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .details-button:hover {
+        color: #5dae1f;
+        -webkit-box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .card-content p {
+        font-size: 11px;
+        /*Changed by ahatnum*/
+        font-weight: 400!important;
+        margin-top: 10px !important;
+    }
+
+    h5 {
+        margin: -1.2rem 0 .05rem 0!important;
+    }
+
+    .card-content .row {
+        margin-bottom: 0px;
+    }
+
+        .countdown {
+            width: 100%;
+            display: block !important;
+        }
+
+        .countdown .measurements:first-child {
+            width: 23%;
+        }
+        .countdown .measurements:last-child {
+            width: 24%;
+        }
+        .countdown .measurements {
+                width: 26.5%;
+            margin-left: auto;
+            left: auto;
+            right: auto;
+            float: left;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .measurements .measurements-number {
+            text-align: center;
+        }
+
+        .measurements:nth-child(4) {
+            text-align: right;
+        }
+
+        .measurements:nth-child(4) .measurements-number {
+            text-align: right;
+            padding-right: 11px;
+        }
+
+        .measurements:nth-child(1) {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .measurements:nth-child(1) .measurements-number {
+
+            text-align: left;
+        }
+        .measurements {
+    position: relative;
+}
+
+.measurements:after {
+    content: ':';
+    position: absolute;
+bottom: 7px;
+    right: -4px;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--theme-color);
+}
+.measurements:last-child:after {
+    content: '';
+}
+        p.measurements-number {
+                font-size: 18px;
+    font-weight: 500 !important;
+    position: relative;
+    top: 20px;
+    color: #42B77A !important;
+        }
+
+        p.measurements-text {
+                bottom: 40px;
+    position: relative;
+    color: #95A29B !important;
+    font-size: 12px;
+                text-transform: uppercase;
+        }
+
+        #tri {
+            border-top: 14px solid #3cb878;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            width: 0px;
+            left: 13%;
+            top: 0px;
+            position: relative;
+        }
+
+        .comment {
+            background: transparent;
+            padding: 10px;
+            box-shadow: none;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comment_first_part {
+            margin-bottom: 5px;
+        }
+
+        .comment_second_part {
+            margin-bottom: 0px;
+        }
+
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            padding: 4px 4px;
+            float: left;
+            display: inline-block;
+        }
+
+        #profile-img_1 {
+            background: url('http://i.cricketcb.com/stats/img/faceImages/544.jpg') no-repeat center/cover;
+        }
+
+        #profile-img_2 {
+            background: url('http://i.cricketcb.com/stats/img/faceImages/9314.jpg') no-repeat center/cover;
+        }
+
+        #profile-img_3 {
+            background: url('http://i.cricketcb.com/stats/img/faceImages/5434.jpg') no-repeat center/cover;
+        }
+
+        #profile-img_4 {
+            background: url('http://i.cricketcb.com/stats/img/faceImages/5144.jpg') no-repeat center/cover;
+        }
+
+        #profile-img_5 {
+            background: url('http://i.cricketcb.com/stats/img/faceImages/5444.jpg') no-repeat center/cover;
+        }
+
+        .bg-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+
+        .name-time {
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 6px;
+        }
+
+        .profile-name {
+            font-weight: 700;
+            display: block;
+        }
+
+        .name-time a {
+            color: var(--theme-color);
+        }
+
+        .comment-time {
+            color: #6c757d !important;
+            display: block;
+            font-size: 13px;
+        }
+
+        .comment_details {
+            color: #6c757d !important;
+            font-size: 15px
+        }
+
+        .campaign-title {
+            font-size: 15px;
+            font-weight: 900;
+            margin: 10px 0;
+            display: block
+        }
+
+        .campaign-photo-wrapper {
+            margin: 30px 0px;
+        }
+
+        .campaign-video-wrapper {
+            margin: 30px 0px;
+        }
+
+        .campaign-photo.col {
+            padding: 0px;
+        }
+
+        .campaign-video.col {
+            padding: 5px;
+        }
+
+        .campaign-photo {
+        }
+
+        #test5 img {
+            margin: 0px auto;
+            padding: 5px;
+        }
+
+        .campaign-references {
+        }
+
+        .campaign-title {
+            border-bottom: 1px solid #777;
+        }
+
+        .campaign-references ol {
+            margin-top: 0px
+        }
+
+        .campaign-references ol li {
+            padding-left: 5px
+        }
+
+        .campaign-references ol li a {
+            color: var(--theme-color);
+        }
+
+        .campaign-references ol li a:hover {
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-width: 556px) {
+            .profile-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+
+            .bg-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+            }
+
+            .profile-name {
+                font-size: 11px;
+            }
+
+            .comment-time {
+                font-size: 10px;
+            }
+
+            .comment_details {
+                font-size: 13px
+            }
+        }
+
+    </style>
+</head>
+<body>
+<app-root></app-root>
+
+</body>
+<script>
+     /*
+     * ================================= Sticky Menu Start =================================
+     */
+    $(window).scroll(function() {
+        $sticky = $("#menubar").offset().top;
+        $width = $(window).width();
+        if (window.pageYOffset >= $sticky) {
+            $("#menu").addClass("sticky");
+
+        } else {
+            $("#menu").removeClass("sticky");
+        }
+    });
+
+    /*
+     * ================================= Sticky Menu End =================================
+     */
+    $("#first_tab").click(function() {
+        $("#tri").css("left", "12%");
+    });
+    $("#second_tab").click(function() {
+        $("#tri").css("left", "50%");
+    });
+    $("#third_tab").click(function() {
+        $("#tri").css("left", "84%");
+    });
+
+     $('#scrollTop').on('click', function(event) {
+
+        var target = $(this.getAttribute('href'));
+
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 2000);
+
+    });
+
+    $(document).scroll(function() {
+        var y = $(this).scrollTop();
+        if (y > screen.height / 2) {
+            $('.goToTop').fadeIn();
+        } else {
+            $('.goToTop').fadeOut();
+        }
+    });
+       /*
+     * ================================= camp stat info size =================================
+     */
+    $(window).resize(function() {
+        campStatResizer();
+    });
+    campStatResizer();
+    function campStatResizer(){
+        $max = 0;
+        $('.camp-stat-info div').css('display','inline-block');
+        for(i=0;i<$('.camp-stat-info').length;i++){
+            $height = $('.camp-stat-info')[i].clientHeight;
+            if($height > $max){
+                $max = $height;
+            }
+        }
+        if($max<50){
+            $('.camp-stat-info div').css('display','inline-block');
+        } else{
+            $('.camp-stat-info div').css('display','block');
+        }
+    }
+     /*
+     * ================================= camp stat info size =================================
+     */
+</script>
+</html>

@@ -1,0 +1,17 @@
+<div class="col s12 m8 l8">
+    <div class="title-cat"> {{ categoryName }}</div>
+    <div class="break-line" style="width: 60px;">
+                        <!--create by ahatnum-->
+                        <div class="line"></div>
+                        <div class="break">
+                            <div class="break-tile left"></div>
+                            <div class="break-tile right"></div>
+                        </div>
+                    </div>
+    <p style="color: #65766d;font-size: 13px;">
+        {{ categoryDesc }}
+    </p>
+    <div class="row little-category">
+        <app-medium-category-item *ngFor="let category of categories" selectedCategory="{{ selectedCategory }}" categoryId="{{ category.id }}" categoryName="{{ category.name }}" categoryImgSrc="{{ photobaseUrl }}{{category.image_url}}"></app-medium-category-item>
+    </div>
+</div>
