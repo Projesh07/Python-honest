@@ -1,4 +1,4 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+**Please follow the requirements**
 
 Excelent features of Angular js and Python Django framework. 
 Api is in Python and Front end is in AngularJs
