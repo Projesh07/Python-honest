@@ -34,7 +34,7 @@
     "angular2-materialize": "^15.1.10",
     "angular5-social-login": "^1.0.9",
     "core-js": "^2.4.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "materialize-css": "^0.100.2",
     "ng2-date-countdown": "0.0.9",
     "ngx-moment": "^2.0.0",
